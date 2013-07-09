@@ -14,7 +14,7 @@ class CardsController < ApplicationController
     @card = Card.new
     @card.name = params[:card][:name]
 
-    @card.deck = Deck.find(params[:deck_id])
+    # @card.deck = Deck.find(params[:deck_id])
 
     if @card.save
       redirect_to @card, notice: 'Card was successfully created.'
