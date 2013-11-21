@@ -45,10 +45,10 @@ class DecksController < ApplicationController
 
     @deck.description = params[:deck][:description]
 
-    params[:cards].each do |card|
+    params[:cards].each do |new_card|
       card = Card.new
-      card[:name] = card.name
-      card[:strength] = card.strength
+      card.name = new_card[:name]
+      card.strength = new_card[:strength]
 
       @deck.cards << card
     end
